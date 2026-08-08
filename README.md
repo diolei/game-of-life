@@ -1,49 +1,36 @@
 # Conway's Game of Life
 
-This is a simple implementation of Conway's Game of Life in C using the SDL library. 
-Conway's Game of Life is a cellular automaton that simulates the evolution of a grid of cells over time. 
-The game consists of a grid of cells, each of which can be in one of two states: alive or dead. The cells evolve from one generation to the next according to a set of rules.
+Conway's Game of Life is a cellular automaton that simulates the evolution of a grid of cells over time. Each cell is alive or dead, and every generation follows the same four rules. The simulation starts with an R-pentomino, a five-cell pattern that evolves over 1,103 generations into a spread of gliders and oscillators.
 
-## The Rules
+## Rules
 
-The rules of Conway's Game of Life are straightforward:
-1. Any live cell with fewer than two live neighbours dies, as if by underpopulation.
-2. Any live cell with two or three live neighbours lives on to the next generation.
-3. Any live cell with more than three live neighbours dies, as if by overpopulation.
-4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+1. Any live cell with fewer than two live neighbors dies, as if by underpopulation.
+2. Any live cell with two or three live neighbors lives on to the next generation.
+3. Any live cell with more than three live neighbors dies, as if by overpopulation.
+4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
 
-## Getting Started
+Cells outside the grid count as dead.
 
-To run the simulation follow these steps: 
+## Prerequisites
 
-### Prerequisites
-
-Before compiling and running this code, make sure you have the `SDL` library installed, you can install it on Debian-based distributions by running the following command:
+Install SDL2; on Debian-based distributions:
 
 ```
 apt install libsdl2-dev
 ```
 
-### Compilation
-
-To compile the code, make sure you have `make` installed. In the source directory run the following command:
+## Build
 
 ```
 make
 ```
 
-### Usage
+Remove the binary with `make clean`.
 
-Run the `game` executable after compilation:
+## Usage
 
 ```
 ./game
 ```
 
-### Cleanup
-
-To remove the generated file, you can simply use the following command:
-
-```
-make clean
-```
+Close the window to quit.

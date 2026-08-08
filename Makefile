@@ -1,15 +1,16 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c99 -pedantic
-LDFLAGS = -lSDL2 -lm
+CFLAGS = -Wall -Wextra -std=c99 -pedantic -O2
+LDFLAGS = -lSDL2
 
 SRCS = game.c
+EXEC = game
 
-all: game
+.PHONY: all clean
 
-game: $(SRCS)
-	 $(CC) $(CFLAGS) $(SRCS) -o game $(LDFLAGS)
+all: $(EXEC)
+
+$(EXEC): $(SRCS)
+	$(CC) $(CFLAGS) $(SRCS) -o $(EXEC) $(LDFLAGS)
 
 clean:
-	rm -f game
-
-
+	rm -f $(EXEC)
